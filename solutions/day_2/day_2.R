@@ -2,6 +2,8 @@ library(tidyverse)
 library(adventdrob)
 # A for Rock, B for Paper, and C for Scissors
 # X for Rock, Y for Paper, and Z for Scissors
+dat <- advent_input(day = 2, year = 2022)
+
 test_dat <- tribble(
      ~x,
   "A Y",
