@@ -19,7 +19,7 @@ generalized_intersection <- function(...) reduce(list(...), intersect)
 dat %>%
   mutate(n_items = str_length(combined)) %>%
   transmute(first = str_sub(combined, end = n_items / 2),
-         second = str_sub(combined, start = n_items / 2 + 1)) %>%
+            second = str_sub(combined, start = n_items / 2 + 1)) %>%
   mutate(across(everything(), ~str_split(., ""))) %>%
   mutate(common_element = map2_chr(first, second, intersect)) %>%
   mutate(priority = map_int(common_element, get_priority)) %>%
